@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!--secondpage에만 고유로 들어갈 내용-->
+    <img src = "{% static 'images/중간고사.jpg' %}" style="width:600px; height:700px;">
+
+    <div class="main">인사말</h1>
+        <div class="hoyeon">
+            <p>얼마 남지 않은 <em>중간고사</em></p>
+            <p>다들 화이팅하시기 바랍니다</p>
+            <p>적게 공부하고 고득점하시길</p>
+        </div>
+    </div>
+{% endblock %}

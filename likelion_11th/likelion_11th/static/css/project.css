@@ -1,0 +1,31 @@
+.title {
+    color: orange;
+    font-size: 100px;
+    text-align: center;
+}
+
+body{
+    background-image: url('../images/보노보노.jpg');
+}
+
+.hoyeon {
+    color: white;
+    font-size: 50px;
+}
+
+.main{
+    color: yellow;
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+img {
+    margin: auto;
+    display: block;  
+}
+
+em {
+    color: red;
+    font-family: '궁서체', sans-serif;
+}

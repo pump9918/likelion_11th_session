@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!--secondpage에만 고유로 들어갈 내용-->
+    <img src = "{% static 'images/박진영눈물.jpg' %}" style="width:500px;">
+
+    <div class="main">하고싶은 말</h1>
+        <div class="hoyeon">
+            <p>처참한 감성, 뒤떨어지는 감각</p>
+            <p>백엔드 트랙의 박호연은 혼자선 해낼 수 없습니다</p>
+            <p>기디와 프론트 여러분</p>
+            <p>저와 함께 <em>마스터피-쓰</em>를 만들어보지 않겠습니까?</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!--네비바에 들어갈 폴더(전 페이지에서 사용함)-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid" style="background-color: #e3f2fd;">
+    <!-- mainpage 링크 연결 -->
+    <a class="navbar-brand" href="{% url 'mainpage' %}">박호연은 누구인가?</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <!-- secondpage 링크 연결 -->
+            <a class="nav-link active" aria-current="page" href="{% url 'secondpage' %}">하고싶은 말</a>
+        </li>
+        <li class="nav-item">
+          <!-- thirdpage 링크 연결 -->
+          <a class="nav-link active" aria-current="page" href="{% url 'thirdpage' %}">인사말</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
