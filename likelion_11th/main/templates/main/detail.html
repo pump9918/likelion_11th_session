@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{post.title}}</h1>
+<h2>작성자 : {{post.writer}}</h2>
+<h2>장소 : {{post.address}}</h2>
+<h2>날씨 : {{post.weather}}</h2>
+<h2>날짜 : {{post.pub_date}}</h2>
+<hr>
+<h3><p>{{post.body}}</p></h3>
+<hr>
+
+{% endblock %}

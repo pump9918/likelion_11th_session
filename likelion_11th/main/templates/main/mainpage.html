@@ -5,15 +5,24 @@
     <!--mainpage에만 고유로 들어갈 내용-->
     <div class="mainpage-image">
         <img class="center" src = "{% static 'images/박호연1.jpg' %}" style="width:500px;">
-        <img class="side" src = "{% static 'images/마참내.png' %}" style="width:150px;">
     </div>
 
-    <div class="main">박호연은 누구인가?</h1>
-        <ul class="hoyeon">
-            <li>소속: 동국대학교 AI융합대학 멀티미디어소프트웨어공학전공</li>
-            <li>나이: 24세(1999년생)</li>
-            <li>거주지: 서울특별시 송파구 위례동</li>
-            <li>취미: 산책, 맛집다니기</li>
-        </ul>
+    <h1><a href="{% url 'new' %}">글 쓰기</a></h1>
+
+    <h1>[글 목록]</h1>
+    <h2>{{posts}}</h2>
+
+    <h1>[글 세부 목록]</h1>
+    <div>
+        {% for post in posts %}
+        <div>
+            <h2>제목: {{post.title}}</h2>
+            <h2>작성자: {{post.writer}}</h2>
+            <h2>내용(간략): {{post.summary}}
+                <a href="{% url 'detail' post.id %}">...더보기</a>
+            </h2>
+        </div>
+        {% endfor %}
     </div>
+
 {% endblock %}

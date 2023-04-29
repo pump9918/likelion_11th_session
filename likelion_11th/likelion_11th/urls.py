@@ -22,4 +22,7 @@ urlpatterns = [
     path('', views.mainpage, name="mainpage"),
     path('secondpage/', views.secondpage, name="secondpage"),
     path('thirdpage/', views.thirdpage, name="thirdpage"),
+    path('new/', views.new, name="new"), #new 페이지 url 연결
+    path('create/', views.create, name="create"), #create 생성페이지 url 연결
+    path('<int:id>', views.detail, name="detail"), #id에 부합하는 detail페이지로 연결
 ]
