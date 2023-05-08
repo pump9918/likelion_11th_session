@@ -9,6 +9,7 @@ class Post(models.Model):
     weather = models.CharField(max_length=100, default = '') #날씨 필드, 나중에 추가해서 마이그레이션 위해 디폴트 추가
     pub_date = models.DateTimeField() #작성 시간 필드
     body = models.TextField() #게시글 필드
+    image = models.ImageField(upload_to="blog/", blank=True, null=True) #이미지 필드
     
     def __str__(self):
         return self.title #데이터를 호출하면 대푯값으로 데이터의 title이 나오게 됨

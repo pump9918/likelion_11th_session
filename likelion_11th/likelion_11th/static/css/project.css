@@ -6,6 +6,7 @@
 
 body {
     background-image: url('../images/짱구배경.jpg');
+    background-size : cover;
 }
 
 .hoyeon {

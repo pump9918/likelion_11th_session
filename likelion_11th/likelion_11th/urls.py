@@ -14,15 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from main import views
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.mainpage, name="mainpage"),
-    path('secondpage/', views.secondpage, name="secondpage"),
-    path('thirdpage/', views.thirdpage, name="thirdpage"),
-    path('new/', views.new, name="new"), #new 페이지 url 연결
-    path('create/', views.create, name="create"), #create 생성페이지 url 연결
-    path('<int:id>', views.detail, name="detail"), #id에 부합하는 detail페이지로 연결
-]
+    path('', include('main.urls')),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

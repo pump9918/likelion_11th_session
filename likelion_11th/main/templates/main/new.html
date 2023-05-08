@@ -3,12 +3,13 @@
 
 {% block content %}
 
-<form action="{% url 'create' %}" method="POST">
+<form action="{% url 'main:create' %}" method="POST" enctype="multipart/form-data"> <!--enctype: 폼데이터가 인코딩 되는 방식 설정-->
     {% csrf_token %}
     <p>제목 : <input type="text" name="title"></p>
     <p>작성자 : <input type="text" name="writer"></p>
     <p>주소 : <input type="text" name="address"></p>
     <p>날씨 : <input type="text" name="weather"></p>
+    <p>사진 : <input type="file" name="image"></p> <!--media 파일로 불러옴-->
     <p>내용 : <textarea type="text" name="body" id="" cols="30" rows="10"></textarea></p>
     <button type="submit">제출</button>
 </form>

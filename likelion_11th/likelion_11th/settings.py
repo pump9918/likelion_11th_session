@@ -125,3 +125,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'likelion_11th', 'static')] #static파일 불러올 경로
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') #static파일 불러올 경로
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

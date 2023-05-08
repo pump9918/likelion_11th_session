@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class = "container">
+    <h1>글 수정하기</h1>
+    <form action="{% url 'main:update' post.id %}" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>제목 : <input type="text" name="title" value={{post.title}}></p>
+        <p>작성자 : <input type="text" name="writer" value={{post.writer}}></p>
+        <p>장소 : <input type="text" name="address" value={{post.address}}></h2>
+        <p>날씨 : <input type="text" name="weather" value={{post.weather}}></h2>
+        {% if post.image %}
+            <p>현재: <img src="{{post.image.url}}" alt="사진"  height="100"> {{post.image}}</p>
+            <p>사진 : <input type="file" name="image"></p> <!--media 파일로 불러옴-->
+        {% else %}
+            <p>사진 : <input type="file" name="image"></p>
+        {% endif %}
+        <p>내용 : <textarea name="body" id="" cols="30" rows="10">{{post.body}}</textarea></p>
+        <button type="submit">제출</button>
+    </form>
+</div>
+{% endblock %}
