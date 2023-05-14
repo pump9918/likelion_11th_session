@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>My Page</h1>
+    <h3>이름: {{user.username}}</h3>
+    <h3>닉네임(별명): {{ user.profile.nickname }}</h3>
+    <h3>학과: {{ user.profile.department }}</h3>
+    <h3>취미: {{ user.profile.hobby }}</h3>
+    <!--django 내부에서 user모델만 자체적으로 템플릿에서 활용할 수 있도록 처리해줌-->
+    <!--profile등 다른 클래스는 안됨-->
+
+    <h1>작성한 글 목록</h1>
+    <div>
+        <h1>[글 목록]</h1>
+        {% for post in posts %}
+            <h2>{{post}}</h2>
+        {% endfor %}
+    </div>
+    <a href="{% url 'main:mainpage' %}">메인으로 돌아가기</a>
+{% endblock %}

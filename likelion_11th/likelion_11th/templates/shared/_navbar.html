@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid" style="background-color: #e3f2fd;">
     <!-- mainpage 링크 연결 -->
-    <a class="navbar-brand" href="{% url 'main:mainpage' %}">박호연은 누구인가?</a>
+    <a class="navbar-brand" href="{% url 'main:mainpage' %}">메인페이지</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,13 +10,34 @@
       <ul class="navbar-nav">
         <li class="nav-item">
             <!-- secondpage 링크 연결 -->
-            <a class="nav-link active" aria-current="page" href="{% url 'main:secondpage' %}">하고싶은 말</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'main:secondpage' %}">페이지 2</a>
         </li>
         <li class="nav-item">
           <!-- thirdpage 링크 연결 -->
-          <a class="nav-link active" aria-current="page" href="{% url 'main:thirdpage' %}">인사말</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'main:thirdpage' %}">페이지 3</a>
         </li>
       </ul>
     </div>
   </div>
+  <li class="nav-item dropdown">
+    {% if user.is_authenticated %}
+    <!--로그인시 보이는 화면-->
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     {{user.username}}
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+     <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">로그아웃</a></li>
+     <li><a class="dropdown-item" href="{% url 'users:mypage' %}">mypage</a></li>
+    </ul>
+    {% else %}
+    <!--로그아웃시 보이는 화면-->
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     LOGIN
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+     <li><a class="dropdown-item" href="{% url 'accounts:login' %}">login</a></li>  
+     <li><a class="dropdown-item" href="{% url 'accounts:signup' %}">signup</a></li>
+    </ul>
+    {% endif %}
+  </li>
 </nav>
