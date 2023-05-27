@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="blog_container">
+    <h1>#{{tag}} 게시물 목록</h1>
+    <hr>
+    {% for p in posts %}
+    <div class="post">
+        <h2 class="title"><a href="{% url 'main:detail' p.id %}">제목 : {{ p.title }}</a></h2>
+        <h4>작성자 : {{ p.writer }}</h4>
+        <p>내용 : {{ p.body }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
