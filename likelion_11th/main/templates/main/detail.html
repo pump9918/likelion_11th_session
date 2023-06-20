@@ -10,10 +10,28 @@
 <h2>날짜 : {{post.pub_date}}</h2>
 <hr>
 
+{% if post.writer %}
+    <a href="{% url 'users:mypage' post.writer.id %}">작성자 : {{ post.writer }}</a><br>
+{% else %}
+    작성자 : 알 수 없음<br>
+{% endif %}
+
 {% if post.image %}
     <p><img src="{{post.image.url}}" alt="사진"  height="400"></p>
 {% endif %}
 <h3><p>{{post.body}}</p></h3>
+
+<!--좋아요 버튼-->
+<a href="{% url 'main:likes' post.id %}">
+    {% if user in post.like.all %}
+    취소
+    {% else %}
+    좋아요
+    {% endif %}
+</a>
+
+<h2>좋아요 {{post.like_count}}개</h2>
+
 
 <p>태그 :
     {% for tag in post.tags.all %}
